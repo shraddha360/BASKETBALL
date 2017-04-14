@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: e9b2fd7b57eee49858e8b93ab2cec451
+timeCreated: 1491893887
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: JACKPORT GREEK NCV
+  fontNames:
+  - JACKPORT GREEK NCV
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

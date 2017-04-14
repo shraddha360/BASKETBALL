@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 0068c1bf7b14c484385e13771c2efcfe
+timeCreated: 1491893823
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Adidas Half Block 2016
+  fontNames:
+  - Adidas Half Block 2016
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
