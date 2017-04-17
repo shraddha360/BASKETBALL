@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class sound : MonoBehaviour {
 
-	public AudioSource Bounce;
+	public AudioSource Sound;
+	public AudioClip Bounce , dribble;
+
+
 
 
 
@@ -14,23 +17,35 @@ public class sound : MonoBehaviour {
 	void Start () { 
 
 
-		Bounce= GameObject.FindObjectOfType<AudioSource>();
+//
+//		AudioSource Sound = GetComponent<AudioSource>();
 	
-
 	}
-
 
 
 	void OnCollisionEnter(Collision col)
 	{
-		if(col.gameObject.tag == "Ball")
-		{
-			Bounce.Play();
-			Debug.Log("Nurrrr");
+		if (col.gameObject) {
+			
+			Sound.PlayOneShot (Bounce);
+
+			Debug.Log ("bounce");
 		}
-		
+
+	}
+			void OnTriggerEnter (Collider collision)
+			{
+				
+
+				if (collision.gameObject.tag == "collider") {
+
+					Sound.PlayOneShot (dribble);
+
+					Debug.Log ("dd");
+
+				}
+
+		}
+
 	}
 
-
-
-}

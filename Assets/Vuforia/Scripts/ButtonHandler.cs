@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 
 
-
 public class ButtonHandler : MonoBehaviour {
 
 	public GameObject Panel;
@@ -20,12 +19,15 @@ public class ButtonHandler : MonoBehaviour {
 
 
 	// Use this for initialization
-	public void Start () {
+	public void MenuStart () {
 		
 	}
-	
-	// Update is called once per frame
+
+
+
 	public void play () {
+
+
 
 		Panel.SetActive (false);
 

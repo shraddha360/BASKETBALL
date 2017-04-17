@@ -8,6 +8,10 @@ public class Distance : MonoBehaviour {
 	public float distFromPlayer;
 	public Transform hoop;
 	public GameObject Gofar;
+	public GameObject Ball;
+
+
+
 
 
 
@@ -19,9 +23,12 @@ public class Distance : MonoBehaviour {
 
 		distFromPlayer = Vector3.Distance (hoop.position, transform.position);
 			
-		if (distFromPlayer <= 44) {
+		if (distFromPlayer <= 50) {
 
 			Gofar.SetActive  (true);
+
+			Ball.SetActive (false);
+
 		
 			Debug.Log ("GET LOST");
 
@@ -29,9 +36,15 @@ public class Distance : MonoBehaviour {
 		
 		}
 
-		if (distFromPlayer >= 44) {
-		
+
+
+		else if (distFromPlayer >= 50) {
+			
 			Gofar.SetActive (false);
+
+			Ball.SetActive  (true);
+		
+
 		
 		}
 	}

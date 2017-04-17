@@ -4,10 +4,11 @@ using System.Collections;
 
 public class Pokeball : MonoBehaviour {
 	[SerializeField]
-	private float throwSpeed = 7000f;
+	private float throwSpeed = 8500f;
 	private float speed;
 	private float lastMouseX, lastMouseY;
 	public GameObject DefaultPosition;
+	public GameObject fake;
 	private bool thrown, holding;
 
 	private Rigidbody _rigidbody;
@@ -43,6 +44,8 @@ public class Pokeball : MonoBehaviour {
 		if(Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Ended) { //for pc = if(Input.GetButtonUp(0)){
 			if (lastMouseY < Input.GetTouch (0).position.y) {
 				ThrowBall (Input.GetTouch (0).position);
+
+				fake.SetActive (false);
 			}
 		}
 
@@ -54,6 +57,8 @@ public class Pokeball : MonoBehaviour {
 
 	void Reset(){
 		CancelInvoke ();
+
+		fake.SetActive (true);
 		//transform.position = Camera.main.ViewportToWorldPoint(new Vector3 (0.5f, 0.1f, Camera.main.nearClipPlane * 7.5f));
 		transform.position= newPosition;
 		thrown = holding = false;
