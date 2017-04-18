@@ -7,9 +7,13 @@ using UnityEngine.UI;
 
 public class ButtonHandler : MonoBehaviour {
 
+
+
+
+
 	public GameObject Panel;
 
-
+	public  bool Menu= true;
 
 	public GameObject Blank;
 
@@ -18,17 +22,18 @@ public class ButtonHandler : MonoBehaviour {
 
 
 
+
 	// Use this for initialization
-	public void MenuStart () {
-		
-	}
+
 
 
 
 	public void play () {
+		
 
 
 
+		StartCoroutine (Menufalse ());
 		Panel.SetActive (false);
 
 
@@ -37,7 +42,7 @@ public class ButtonHandler : MonoBehaviour {
 
 	public void quit(){
 	Blank.SetActive (true);
-	
+
 
 		Panel.SetActive (false);
 
@@ -65,20 +70,30 @@ public class ButtonHandler : MonoBehaviour {
 
 
 		public void back(){
-
+		
+		StartCoroutine (Menutrue ());
 		Panel.SetActive (true);
 
 	
 	}
 
-	public void Can(){
-
-
+	IEnumerator Menutrue(){
 	
+		yield return new WaitForSeconds (2f);
 
-	
+		Menu = true;
 	
 	}
-	
+	IEnumerator Menufalse(){
+
+		yield return new WaitForSeconds (2f);
+
+		Menu = false;
+
+	}
+
+
+
+
 	}
 

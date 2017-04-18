@@ -4,7 +4,6 @@ using System.Collections;
 
 public class Pokeball : MonoBehaviour {
 	[SerializeField]
-	private float throwSpeed = 8500f;
 	private float speed;
 	private float lastMouseX, lastMouseY;
 	public GameObject DefaultPosition;
@@ -70,33 +69,19 @@ public class Pokeball : MonoBehaviour {
 		//transform.SetParent (Camera.main.transform);
 	}
 
+
 	void OnTouch() {
-		Vector3 mousePos = Input.GetTouch (0).position;
 
-		mousePos.z = Camera.main.nearClipPlane * 7.5f;
 
-		newPosition = transform.position;//Camera.main.ScreenToWorldPoint (mousePos);
 
-		transform.localPosition = Vector3.Lerp (transform.localPosition, newPosition, 500f * Time.deltaTime);
 	}
 
 	void ThrowBall(Vector3 mousePos) {
-		_rigidbody.useGravity = true;
 
-		float differenceY = (mousePos.y - lastMouseY) / Screen.height * 200;
-		speed = throwSpeed * differenceY;
 
-		float x = (mousePos.x / Screen.width) - (lastMouseX / Screen.width);
-		x = Mathf.Abs (Input.GetTouch (0).position.x - lastMouseX) / Screen.width * 200 * x;
 
-		Vector3 direction = new Vector3 (x, 0f, 1f);
-		direction = Camera.main.transform.TransformDirection (direction);
 
-		_rigidbody.AddForce((direction * speed ) + (Vector3.up * speed));
 
-		holding = false;
-		thrown = true;
 
 		Invoke ("Reset", 5.0f);
 	}
-}
